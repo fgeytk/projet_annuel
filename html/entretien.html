@@ -1,0 +1,167 @@
+<!DOCTYPE html> <!-- Version 5 de HTML-->
+<html lang="fr"> <!-- Précision de la langue pour le navigateur-->
+
+<head> <!-- Entête du document HTML -->
+
+    <meta charset="UTF-8" /> <!-- Précise l'encodage des caractère à UTF-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Optimisation de la fenêtre d'affichage -->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" /> <!--Lien vers le fichier de style css-->
+    <script type="text/javascript" src="../js/script.js"></script> <!--Lien vers le fichier javascript-->
+
+    <title>Simulation Entretien Professionnel</title> <!-- titre qui s'affiche dans le navigateur -->
+
+</head>
+
+<!-- Début du code de la page web -->
+
+<body>
+
+    <!-- Entête de la page web -->
+    <header>
+
+        <nav>
+
+            <!-- 1er emplacement : [img/nom site] -->
+            <div class="logo">
+                <p>[Emplacement pour logo du site ou nom du site]</p>
+            </div>
+
+            <!-- 2e emplacement : liens pour naviguer entre les pages -->
+            <div class="link">
+                <ul>
+                    <li><a href="./accueil.html">Accueil</a></li>
+                    <li><a href="./entretien.html">Simulation d'Entretien</a></li>
+                    <li><a href="./apropos.html">A Propos</a></li>
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Section de présentation de la page-->
+    <section>
+        <h1>Mise en contexte :</h1>
+        <p>Vous allez effectuer une simulation d'entretien.
+            <br>Pour pourvoir intéragir avec votre futur employeur, commencez par sélectionner une catégorie.
+            <br>Libre à vous d'expérimenter les diverses propositions et observez les retours qu'elles suscitent.
+        </p>
+        <p>A vous de jouer !</p>
+    </section>
+
+    <!-- Section de l'entretien virtuel -->
+    <section id="entretien">
+
+        <!-- Div pour la simulation -->
+        <div id="simulation">
+            <h3><u>Simulation d'entretien :</u></h3>
+
+             <!-- Fenêtre pour le commentaire recruteur -->
+            <fieldset id="com_recruteur">
+                <legend>Commentaire Recruteur</legend>
+                <p id="text_recruteur"> Loading . . .
+                </p>
+            </fieldset>
+
+            <!-- Div pour l'écran dynamique -->
+            <div id="pix">
+                <img id=photo src="../img/masculin_neutre.png" alt="masculin_neutre" height="400px" width="600px">
+            </div>
+
+            <!-- Fenêtre pour le commentaire postulant -->
+            <fieldset id="com_postulant">
+                <legend>Commentaire Recruteur</legend>
+                <p id="text_postulant"> Loading . . .
+                </p>
+            </fieldset>
+        </div>
+
+        <!-- Div pour les catégories -->
+        <div id="categories">
+            <h3><u>Choisissez une catégorie :</u></h3>
+    
+            <ul>
+                <li class="no_point"><button class="button_categorie" onclick=click_qualites()>Qualités</button></li>
+                <li class="no_point"><button class="button_categorie" onclick=click_defauts()>Défauts</button></li>
+                <li class="no_point"><button class="button_categorie" onclick=click_hobbies()>Hobbies</button></li>
+            </ul>
+        </div>
+        <!-- Div pour les qualités -->
+        <div id="qualites">
+            <h3><u>Choisissez une qualité :</u></h3>
+            <button class="button_return" onclick=click_categories()>Choix des catégories</button>
+            <ul>
+                <li class="no_point"><button id="q1" class="button_details" onclick=choix_phrases(q1)>Qualités 1</button></li>
+                <li class="no_point"><button id="q2" class="button_details" onclick=choix_phrases(q2)>Qualités 2</button></li>
+                <li class="no_point"><button id="q3" class="button_details" onclick=choix_phrases(q3)>Qualités 3</button></li>
+                <li class="no_point"><button id="q4" class="button_details" onclick=choix_phrases(q4)>Qualités 4</button></li>
+                <li class="no_point"><button id="q5" class="button_details" onclick=choix_phrases(q5)>Qualités 5</button></li>
+            </ul>
+        </div>
+        <!-- Div pour les défauts -->
+        <div id="defauts">
+            <h3><u>Choisissez un défaut :</u></h3>
+            <button class="button_return" onclick=click_categories()>Choix des catégories</button>
+            <ul>
+                <li class="no_point"><button id="d1" class="button_details" onclick=choix_phrases(d1)>Défauts 1</button></li>
+                <li class="no_point"><button id="d2" class="button_details" onclick=choix_phrases(d2)>Défauts 2</button></li>
+                <li class="no_point"><button id="d3" class="button_details" onclick=choix_phrases(d3)>Défauts 3</button></li>
+                <li class="no_point"><button id="d4" class="button_details" onclick=choix_phrases(d4)>Défauts 4</button></li>
+                <li class="no_point"><button id="d5" class="button_details" onclick=choix_phrases(d5)>Défauts 5</button></li>
+            </ul>
+        </div>
+        <!-- Div pour les hobbies -->
+        <div id="hobbies">
+            <h3><u>Choisissez un hobbie :</u></h3>
+            <button class="button_return" onclick=click_categories()>Choix des catégories</button>
+            <ul>
+                <li class="no_point"><button id="h1" class="button_details" onclick=choix_phrases(h1)>Hobbies 1</button></li>
+                <li class="no_point"><button id="h2" class="button_details" onclick=choix_phrases(h2)>Hobbies 2</button></li>
+                <li class="no_point"><button id="h3" class="button_details" onclick=choix_phrases(h3)>Hobbies 3</button></li>
+                <li class="no_point"><button id="h4" class="button_details" onclick=choix_phrases(h4)>Hobbies 4</button></li>
+                <li class="no_point"><button id="h5" class="button_details" onclick=choix_phrases(h5)>Hobbies 5</button></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pop-up : choix des questions -->
+    <div id="popup_answer">
+        <!-- Dans la popup -->
+<div class="popup_content">
+    <h2>Sélectionner une formulation de phrase :</h2>
+    <ul class="no_point">
+        <li>
+            <input type="radio" id="p1" name="phrase" value="a">
+            <label for="p1">Phrase Soutenue</label>
+        </li>
+        <li>
+            <input type="radio" id="p2" name="phrase" value="b">
+            <label for="p2">Phrase Modérée</label>
+        </li>
+        <li>
+            <input type="radio" id="p3" name="phrase" value="c">
+            <label for="3">Phrase Familière</label>
+        </li>
+    </ul>
+            <a href="javascript:void(0)" class="popup-submit" onclick=choix_phrases()>Soumettre</a>
+            <a href="javascript:void(0)" class="popup-exit" onclick=exit()>X</a>
+            <!-- javascript:void(0) ne retourne aucune réponse, mais en le combinant avec la fonction qui active la popu-up il permet de la quitter -->
+        </div>
+    </div>
+
+    <!-- Bas de la page web avec lien pour naviguer entre les pages et copyright -->
+    <footer>
+        <div class="bottom_page">
+            <p>©️ Projet Annuel 2024-2025
+                <br>Alexandra LUSTIERE, Séverine MAUROY, Titouan CHARLES, Claude Marvine MBOUROU
+                <br>Tous droits réservés
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

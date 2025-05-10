@@ -1,0 +1,113 @@
+<!DOCTYPE html> <!-- Version 5 de HTML-->
+<html lang="fr"> <!-- Précision de la langue pour le navigateur-->
+
+<head> <!-- Entête du document HTML -->
+
+    <meta charset="UTF-8" /> <!-- Précise l'encodage des caractère à UTF-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Optimisation de la fenêtre d'affichage -->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" /> <!--Lien vers le fichier de style css-->
+    <script type="text/javascript" src="../js/script.js"></script> <!--Lien vers le fichier javascript-->
+
+    <title>Simulation Entretien Professionnel</title> <!-- titre qui s'affiche dans le navigateur -->
+
+</head>
+
+<!-- Début du code de la page web -->
+
+<body id="page_accueil">
+
+    <!-- Entête de la page web -->
+    <header>
+
+        <nav>
+
+            <!-- 1er emplacement : [img/nom site] -->
+            <div class="logo">
+                <p>[Emplacement pour logo du site ou nom du site]</p>
+                </div>
+
+            <!-- 2e emplacement : liens pour naviguer entre les pages -->
+            <div class="link">
+                <ul>
+                    <li><a href="./accueil.html">Accueil</a></li>
+                    <li><a href="./entretien.html">Simulation d'Entretien</a></li>
+                    <li><a href="./apropos.html">A Propos</a></li>
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- Section de présentation du site -->
+    <section>
+        <h1>Bienvenue sur [Nom du site (optionnel)]</h1>
+
+        <p>
+            Transformer votre [...] en <b>confiance</b>
+            <br>et <b>maîtriser</b> l'art de l'entretien d'embauche avec nous.
+        </p>
+
+    </section>
+
+    <!-- Bouton avec fonction associée -->
+    <div id="div_before">
+        <p>Avant de commencer :</p>
+        <button id="button_before" onclick=before()>Cliquer Ici</button>
+    </div>
+
+    <!-- Apparition d'une fenetre sur click du bouton "commencer" -->
+    <!-- Fenetre avec choix : identité de genre -->
+    <fieldset id="fenetre_identite">
+
+        <legend>Choisissez votre identité :</legend>
+
+        <!-- Liste non ordonnée à choix unique -->
+        <ul class="no_point">
+            <li>
+                <input type="radio" id="idt1" name="identity" value="a">
+                <label for="idt1">Homme</label>
+            </li>
+            <li>
+                <input type="radio" id="idt2" name="identity" value="b">
+                <label for="idt2">Femme</label>
+            </li>
+            <li>
+                <input type="radio" id="idt3" name="identity" value="c">
+                <label for="idt3">Non-binaire</label>
+            </li>
+            <li>
+                <input type="radio" id="idt4" name="identity" value="d">
+                <label for="idt4">Cisgenres</label>
+            </li>
+            <li>
+                <input type="radio" id="idt5" name="identity" value="e">
+                <label for="idt5">Transgenres</label>
+            </li>
+            <li>
+                <input type="radio" id="idt6" name="identity" value="f">
+                <label for="idt6">Agenres</label>
+            </li>
+        </ul>
+
+    </fieldset>
+
+    <!-- Bouton avec fonction associée -->
+    <div id="div_start">
+        <button id="button_start" onclick=start()>Commencer</button>
+    </div>
+
+    <!-- Bas de la page web avec lien pour naviguer entre les pages et copyright -->
+    <footer>
+        <div class="bottom_page">
+            <p>©️ Projet Annuel 2024-2025
+                <br>Alexandra LUSTIERE, Séverine MAUROY, Titouan CHARLES, Claude Marvine MBOUROU
+                <br>Tous droits réservés
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
