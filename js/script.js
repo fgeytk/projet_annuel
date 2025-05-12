@@ -150,9 +150,11 @@ function submitLanguageChoice() {
     tp.textContent = selectedResponse; // Affiche la réponse choisie dans le texte postulant
     tr.textContent = recruterResponse;
     
-    // Fermer la popup
+    // Fermer la popup (assurez-vous que la classe 'open' est bien retirée)
     let popup = document.querySelector("#popup_answer");
-    popup.classList.toggle("open");
+    if (popup.classList.contains("open")) {
+        popup.classList.remove("open");
+    }
 }
 
 // Fonction pour fermer la popup
