@@ -84,27 +84,27 @@
             <h3><u>Choisissez une catégorie :</u></h3>
     
             <ul>
-                <li class="no_point"><button class="button_categorie" onclick=click_qualites()>Qualités</button></li>
-                <li class="no_point"><button class="button_categorie" onclick=click_defauts()>Défauts</button></li>
-                <li class="no_point"><button class="button_categorie" onclick=click_hobbies()>Hobbies</button></li>
+                <li class="no_point"><button class="button_categorie" >Qualités</button></li>
+                <li class="no_point"><button class="button_categorie" >Défauts</button></li>
+                <li class="no_point"><button class="button_categorie" >Hobbies</button></li>
             </ul>
         </div>
         <!-- Div pour les qualités -->
         <div id="qualites">
             <h3><u>Choisissez une qualité :</u></h3>
-            <button class="button_return" onclick=click_categories()>Choix des catégories</button>
+            <button class="button_return" >Choix des catégories</button>
             <!-- ici j'ai suprimmer les liste qui ne servait a rien -->
         </div>
         <!-- Div pour les défauts -->
         <div id="defauts">
             <h3><u>Choisissez un défaut :</u></h3>
-            <button class="button_return" onclick=click_categories()>Choix des catégories</button>
+            <button class="button_return">Choix des catégories</button>
             <!-- ici j'ai suprimmer les liste qui ne servait a rien -->
         </div>
         <!-- Div pour les hobbies -->
         <div id="hobbies">
             <h3><u>Choisissez un hobbie :</u></h3>
-            <button class="button_return" onclick=click_categories()>Choix des catégories</button>
+            <button class="button_return">Choix des catégories</button>
             <!-- ici j'ai suprimmer les liste qui ne servait a rien -->
         </div>
     </section>
@@ -112,24 +112,24 @@
     <!-- Pop-up : choix des questions -->
     <div id="popup_answer">
         <!-- Dans la popup -->
-<div class="popup_content">
-    <h2>Sélectionner une formulation de phrase :</h2>
-    <ul class="no_point">
-        <li>
-            <input type="radio" id="p1" name="phrase" value="a">
-            <label for="p1">Phrase Soutenue</label>
-        </li>
-        <li>
-            <input type="radio" id="p2" name="phrase" value="b">
-            <label for="p2">Phrase Modérée</label>
-        </li>
-        <li>
-            <input type="radio" id="p3" name="phrase" value="c">
-            <label for="3">Phrase Familière</label>
-        </li>
-    </ul>
-            <a href="javascript:void(0)" class="popup-submit" onclick=choix_phrases()>Soumettre</a>
-            <a href="javascript:void(0)" class="popup-exit" onclick=exit()>X</a>
+        <div class="popup_content">
+            <h2>Sélectionner une formulation de phrase :</h2>
+            <ul class="no_point">
+                <li>
+                    <input type="radio" id="p1" name="phrase" value="a">
+                    <label for="p1">Phrase Soutenue</label> <!-- Label updated dynamically -->
+                </li>
+                <li>
+                    <input type="radio" id="p2" name="phrase" value="b">
+                    <label for="p2">Phrase Modérée</label> <!-- Label updated dynamically -->
+                </li>
+                <li>
+                    <input type="radio" id="p3" name="phrase" value="c">
+                    <label for="p3">Phrase Familière</label> <!-- Label updated dynamically -->
+                </li>
+            </ul>
+            <a href="javascript:void(0)" class="popup-submit" onclick="submitLanguageChoice()">Soumettre</a>
+            <a href="javascript:void(0)" class="popup-exit" onclick="exit()">X</a>
             <!-- javascript:void(0) ne retourne aucune réponse, mais en le combinant avec la fonction qui active la popu-up il permet de la quitter -->
         </div>
     </div>

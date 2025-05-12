@@ -36,11 +36,20 @@ function start() {
 // Fonction pour ouvrir la popup de choix de niveau de langage
 function openLanguagePopup(reponse, index, categorie) {
     currentChoice = {
-        text: reponse,
+        text: reponse.phrase, // Store the phrase
         index: index,
-        category: categorie
+        category: categorie,
+        soutenue: reponse.soutenue, // Store the soutenue choice
+        moderee: reponse.modérée, // Store the modérée choice
+        familiere: reponse.familière // Store the familière choice
     };
-    
+
+    // Update the popup with the three choices
+    document.querySelector("label[for='p1']").textContent = currentChoice.soutenue;
+    document.querySelector("label[for='p2']").textContent = currentChoice.moderee;
+    document.querySelector("label[for='p3']").textContent = currentChoice.familiere;
+
+    // Open the popup
     let popup = document.querySelector("#popup_answer");
     popup.classList.toggle("open");
 }
@@ -58,20 +67,25 @@ function submitLanguageChoice() {
     
     // Réinitialisation des variables
     let level = "";
+    let selectedResponse = "";
     let recruterResponse = "";
     let photoSrc = "";
     
     // Déterminer le niveau de langage choisi
+    // Il fait peur ce if else : A faire : mettre un switch
     if (a.checked) {
         level = "de façon soutenue";
+        selectedResponse = currentChoice.soutenue;
         photoSrc = "../img/masculin_curieux.png";
         recruterResponse = "Il n'est pas nécessaire d'être aussi soutenu.";
     } else if (c.checked) {
         level = "familièrement";
+        selectedResponse = currentChoice.familiere;
         photoSrc = "../img/masculin_interrogatif.png";
         recruterResponse = "Et moins familièrement ça donne quoi ?";
     } else if (b.checked) {
         level = "modérément";
+        selectedResponse = currentChoice.moderee;
         
         // Réponses spécifiques selon la catégorie et l'index
         if (currentChoice.category === "Qualités") {
@@ -133,7 +147,7 @@ function submitLanguageChoice() {
     
     // Mise à jour de l'interface
     photo.src = photoSrc;
-    tp.textContent = currentChoice.text + " " + level;
+    tp.textContent = selectedResponse; // Affiche la réponse choisie dans le texte postulant
     tr.textContent = recruterResponse;
     
     // Fermer la popup
@@ -151,7 +165,7 @@ function exit() {
 document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".button_categorie"); 
     const categoriesDiv = document.getElementById("categories");
-    
+    // Div pour les réponses
     let reponsesList = document.createElement("div");
     reponsesList.id = "reponses_liste";
     reponsesList.className = "reponses_liste";
@@ -177,28 +191,28 @@ document.addEventListener("DOMContentLoaded", function () {
         submitButton.addEventListener("click", submitLanguageChoice);
     }
 
-    // Fetch des réponses et création des boutons
+    // ecouteurs d'événements pour chaque bouton de catégorie
     buttons.forEach(button => {
         button.addEventListener("click", function () {
             let categorie = this.innerText;
-
+            //fetch pour récupérer les réponses
             fetch("reponses.php")
                 .then(response => response.json())
                 .then(data => {
                     let reponses = data[categorie];
                     if (reponses) {
                         reponsesList.innerHTML = "";
-                        
+                        //titre de la catégorie
                         let titre = document.createElement("h4");
                         titre.innerText = categorie;
                         reponsesList.appendChild(titre);
-                        
+                        //enumération des réponses
                         reponses.forEach((reponse, index) => {
                             let li = document.createElement("li");
                             li.className = "no_point";
-                            
+                            //création des bouton avec la phrase ou mot associée
                             let btn = document.createElement("button");
-                            btn.innerText = reponse;
+                            btn.innerText = reponse.phrase; //voir l'objet json
                             btn.className = "button_reponse";
                             btn.addEventListener("click", function() {
                                 openLanguagePopup(reponse, index, categorie);
