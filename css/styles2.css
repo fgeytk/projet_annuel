@@ -24,7 +24,7 @@ nav { /* Style appliqué à la barre de navigation */
     color: whitesmoke;
     font-size: 20px;
     cursor: pointer;
-    padding-bottom: 0.5em; /* Espace plus important entre le texte et le soulignage */
+    padding-bottom: 0.05em; /* Espace reduit pour + responsive */
     background-image: linear-gradient(whitesmoke, whitesmoke); /* Double l'épaisseur du trait de soulignage */
     background-size: 0% 0.1em; /* Présence quasi insivible du soulignage → base pour le faire varier au passage du pointer */
     background-position-y: 100%;
@@ -41,7 +41,7 @@ nav { /* Style appliqué à la barre de navigation */
 
 }
 .link a:hover { /* Style appliqué aux liens au passage du pointer */
-    background-size: 80% 0.10em; /* Variration du soulignage au passage du pointer */ 
+    background-size: 100% 0.10em; /* Variration du soulignage au passage du pointer */ 
 }
 footer{ /* Style appliqué au Footer*/
     width: 100%;
@@ -71,6 +71,10 @@ p { /* Style appliqué à tous les paragraphes */
     padding: 20px;
     text-align: center;
 }
+#avant { /* Style appliqué à tous les paragraphes */
+    padding: 20px;
+    text-align: left;
+}
 ul { /* Style appliqué à toutes les listes */
     color: black;
     text-align: left;
@@ -88,51 +92,7 @@ button:hover { /* Style appliqué à tous les boutons*/
     list-style: none; /* retire les points devant les éléments de la liste */
 }
 
-/* Balises Pop-up */
-#popup_answer {
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background: grey;
-    z-index:98;
-    display: none;
-}
-#popup_answer.open{
-    display: block !important;
-}
-.popup_content{
-    max-width: 600px;
-    width: 100%;
-    padding: 30px;
-    box-sizing: border-box;
-    background: whitesmoke;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.popup_content .popup-submit {
-    position: absolute;
-    top: 90%;
-    right : 40%;
-    text-decoration: none;
-    color: whitesmoke;
-    background-color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-.popup_content .popup-exit {
-    position: absolute;
-    top: -10px;
-    right : -10px;
-    text-decoration: none;
-    color: whitesmoke;
-    background-color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
+
 
 /* Balises Spécifiques : Page Accueil */
 fieldset#fenetre_identite { /* Style appliqué à <fieldset id="fenetre_identite"> */
@@ -188,7 +148,10 @@ div#simulation div#pix { /* Style appliqué à <div id="pix"> */
     background-color:black ;
     box-shadow: 10px 10px 10px grey;
 }
-
+div#simulation div#pix img{ /* Style appliqué à <img> */
+    background-image:center url("../img/photo.webp");
+    opacity: 50%;
+}
 fieldset#com_recruteur { /* Style appliqué à <fieldset id="com_recruteur"> */
     width: 45%;
     height: 15%;
@@ -236,39 +199,16 @@ fieldset#com_postulant p { /* Style appliqué à <p> */
     margin-top: 0;
 }
 div#categories { /* Style appliqué à <div id="categories"> */
-    display:block;
-    justify-content:justify; 
-}
-div#qualites { /* Style appliqué à <div id="qualites"> */
-    display:none;
-    justify-content:justify; 
-}
-div#defauts { /* Style appliqué à <div id="defauts"> */
-    display:none;
-    justify-content:justify; 
-}
-div#hobbies { /* Style appliqué à <div id="hobbies"> */
-    display:none;
     justify-content:justify; 
 }
 .button_categorie { /* Style appliqué à <button class="button_categorie"> */
     font-size: 18px;
     text-align: center;
     padding:20px;
-    margin-top: 70%;
+    margin-top: 75%;
+    margin-bottom: 75%;
 }
-.button_details { /* Style appliqué à <button class="button_details"> */
-    font-size: 18px;
-    text-align: center;
-    padding:20px;
-    margin-top: 30%;
-}
-.button_return { /* Style appliqué à <button class="button_return"> */
-    font-size: 18px;
-    text-align: center;
-    padding:5px;
-    background-color:grey;
-}
+
 
 
 /* Balises Spécifiques : A propos */
@@ -300,23 +240,104 @@ fieldset.team div.haut div.profil p{ /* Style appliqué à <div class="profil"> 
 fieldset.team div.bas { /* Style appliqué à <div class="bas"> */
     position: bottom;
 }
+/*PAGE CHOIX_OPTION */
+h1{
+    padding: 20px;
+    text-align: center;
 
+}
 .btn_normal{
     font-size: 18px;
     text-align: center;
     padding: 20px;
-    margin: 20px auto;
+    margin: 20px;
     background-color: black;
     color: whitesmoke;
     border: 2px solid whitesmoke;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: block;
 }
 .btn_normal:hover {
     color: black;
     background-color: whitesmoke;
     border: 2px solid black;
     text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+.page_choix{
+    text-align: center;
+    padding: 10px;
+    color: black;
+    font-size: 14px;
+}
+footer{
+    margin-top: auto;
+    background-color:white; /* Facultatif si tu veux fond noir */
+    color:black; /* Facultatif pour texte clair */
+    text-align: center;
+    padding: 15px;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+/*PAGE entretient avancé*/
+.contenaire {
+    min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    background-color: #f4f4f4; /* Couleur de fond claire */
+}
+
+#question-recruteur {
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+#question-recruteur img {
+    width: 270px;
+    height: auto;
+    margin-top: 15px;
+}
+
+#recruteur-message {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+#reponse {
+    width: 80%;
+    height: 80px;
+    margin: 20px 0;
+    padding: 10px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    padding:auto;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+button:hover {
+    background-color: #333;
 }

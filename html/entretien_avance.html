@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simulation entretien professionel avancé</title>
+    <link rel="stylesheet" href="../css/styles2.css">
+    <script type="text/javascript" src="../js/script2.js"></script>
+</head>
+<body>
+    <!-- Entête de la page web -->
+    <header>
+
+        <nav>
+
+            <!-- 1er emplacement : [img/nom site] -->
+            <div class="logo">
+                <p>[Emplacement pour logo du site ou nom du site]</p>
+                </div>
+
+            <!-- 2e emplacement : liens pour naviguer entre les pages -->
+            <div class="link">
+                <ul>
+                    <li><a href="./accueil.html">Accueil</a></li>
+                    <li><a href="./choix_option.html">Choix de simulation</a></li>
+                    <li><a href="./apropos.html">A Propos</a></li>
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="contenaire">
+        <h1>Simulateur d'entretien professionel Avancé</h1>
+
+        <div id="question-recruteur">
+            <p id="question"></p>
+            <img id="img_recruteur" src="../img/masculin_ravi.png" alt="photo-ravi">
+            <p id="recruteur-message">je vous écoute beau gosse</p>
+            <textarea name="reponse" id="reponse" placeholder="Tapez votre reponse ici...."></textarea>
+            <button onclick="nextquestion()">Envoyer</button>
+        </div>
+        <div id="resultat" style="display:none;"></div>
+
+    </div>
+    
+</body>
+<footer>
+    <div class="bottom_page">
+        <p>©️ Projet Annuel 2024-2025
+            <br>Alexandra LUSTIERE, Séverine MAUROY, Titouan CHARLES, Claude Marvine MBOUROU
+            <br>Tous droits réservés
+        </p>
+    </div>
+</footer>
+</html>
