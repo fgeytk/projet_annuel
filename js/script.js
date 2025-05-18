@@ -11,6 +11,15 @@ const responses = [
     "Bien ! J'aimerais en savoir plus à ce sujet."
 ];
 
+//fonctions pour le choix entretien_normal
+function choixnormal(){
+    window.location.href= "../html/entretien.html";
+}
+//fonction pour le choix entretien_avancé
+function choixavance(){
+    window.location.href= "../html/entretien_avance.html";
+}
+
 // Fonctions Boutons
 function before() {
     document.getElementById("fenetre_identite").style.display = "block";
