@@ -62,35 +62,31 @@
     <!-- Fenetre avec choix : identité de genre -->
     <fieldset id="fenetre_identite">
 
-        <legend>Choisissez votre identité :</legend>
+        <form action="simulation.php" method="post">
+            <p>Veuillez remplir les informations suivantes :</p>
+            
+        
+            <label for="Nom"> Votre Nom :</label>
+            <input type="text" id="nom" name="nom" required><br><br>
 
-        <!-- Liste non ordonnée à choix unique -->
-        <ul class="no_point">
-            <li>
-                <input type="radio" id="idt1" name="identity" value="a">
-                <label for="idt1">Homme</label>
-            </li>
-            <li>
-                <input type="radio" id="idt2" name="identity" value="b">
-                <label for="idt2">Femme</label>
-            </li>
-            <li>
-                <input type="radio" id="idt3" name="identity" value="c">
-                <label for="idt3">Non-binaire</label>
-            </li>
-            <li>
-                <input type="radio" id="idt4" name="identity" value="d">
-                <label for="idt4">Cisgenres</label>
-            </li>
-            <li>
-                <input type="radio" id="idt5" name="identity" value="e">
-                <label for="idt5">Transgenres</label>
-            </li>
-            <li>
-                <input type="radio" id="idt6" name="identity" value="f">
-                <label for="idt6">Agenres</label>
-            </li>
-        </ul>
+            <p id="avant">Veuillez choisir votre genre :</p>
+            <input type="radio" id="idt1" name="identite" value="Homme">
+            <label for="idt1">Homme</label><br>
+
+            <input type="radio" id="idt2" name="identite" value="Femme">
+            <label for="idt2">Femme</label><br>
+
+            <input type="radio" id="idt3" name="identite" value="Non-binaire">
+            <label for="idt3">Non-binaire</label><br>
+
+            <input type="radio" id="idt4" name="identite" value="Cisgenres">
+            <label for="idt4">Cisgenres</label><br>
+
+            <input type="radio" id="idt5" name="identite" value="Transgenres">
+            <label for="idt5">Transgenres</label><br>
+
+            <input type="radio" id="idt6" name="identite" value="Agenres">
+            <label for="idt6">Agenres</label><br><br>
 
     </fieldset>
 

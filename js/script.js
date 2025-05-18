@@ -27,7 +27,7 @@ function start() {
     let f = document.getElementById("idt6");
 
     if (a.checked || b.checked || c.checked || d.checked || e.checked || f.checked) {
-        window.location.href = "entretien.html";
+        window.location.href = "choix_option.html";
     } else {
         alert("Merci de bien vouloir décliner votre identité\n💁💁‍♂️💁‍♀️");
     }
